@@ -1,1 +1,53 @@
-<p>header works!</p>
+
+	<div class="topbar stick">
+	  <div class="logo">
+		<a ><img src="images/logo.png" alt=""></a>
+	  </div>
+	  <div class="top-area">
+		
+		<!-- Search -->
+		<div class="top-search">
+		  <app-search></app-search>
+		</div>
+	
+		<ul class="setting-area">
+		  <li><a  title="Home" data-ripple=""><i class="fa fa-home"></i></a></li>
+		  <li>
+			<a href="" title="Friend Requests" data-ripple="">
+			  <i class="fa fa-user"></i><em class="bg-red">5</em>
+			</a>
+			<div class="dropdowns">
+			 <app-friend></app-friend>
+			</div>
+		  </li>
+		  <li>
+			<a href="#" title="Notification" data-ripple="">
+			  <i class="fa fa-bell"></i><em class="bg-purple">7</em>
+			</a>
+			<div class="dropdowns">
+			 <app-notifications></app-notifications>
+			  <a routerLink="all-notification" title="" class="more-mesg">View All</a>
+			</div>
+		  </li>
+		  <li>
+			<a href="#" title="Messages" data-ripple=""><i class="fa fa-commenting"></i><em class="bg-blue">9</em></a>
+			<div class="dropdowns">
+			  <span>5 New Messages <a href="#" title="">Mark all as read</a></span>
+			 <app-message></app-message>
+			  <a routerLink="all-messages" title="" class="more-mesg">View All</a>
+			</div>
+		  </li>
+  
+		  <li>
+			<a routerLink="help" title="Help" data-ripple=""><i class="fa fa-question-circle"></i></a>
+			<div class="dropdowns helps">
+				<app-help></app-help>
+			</div>
+		  </li>
+		</ul>
+		<app-user-connect></app-user-connect>
+		<span class="ti-settings main-menu" data-ripple=""></span>
+	  </div>
+
+	</div>
+	
