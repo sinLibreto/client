@@ -8,6 +8,7 @@ import { NotificationsAllComponent } from './notifications-all/notifications-all
 import { MessagesAllComponent } from './messages-all/messages-all.component';
 import { HelpComponent } from './help/help.component';
 import { UserConnectComponent } from './user-connect/user-connect.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -23,7 +24,8 @@ import { UserConnectComponent } from './user-connect/user-connect.component';
     UserConnectComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports:[
     SearchComponent,

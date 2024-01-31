@@ -1,21 +1,17 @@
-<div class="user-img">
-    <h5>Jack Carter</h5>
-    <img  alt="">
+<div class="relative user-img">
+  <h5 class="text-xl font-bold">flowerCM</h5>
+  <img
+    src="https://plus.unsplash.com/premium_photo-1702910931506-c2c942c6612d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    alt="Jack Carter" class="w-12 h-12 rounded-full cursor-pointer" (click)="toggleMenu()">
 
-    <div class="user-setting">
-      <span class="seting-title">Chat setting <a href="#" title="">see all</a></span>
-      <ul class="chat-setting">
-        <li><a href="#" title=""><span class="status f-online"></span>online</a></li>
-        <li><a href="#" title=""><span class="status f-away"></span>away</a></li>
-        <li><a href="#" title=""><span class="status f-off"></span>offline</a></li>
-      </ul>
-      <span class="seting-title">User setting <a href="#" title="">see all</a></span>
-      <ul class="log-out">
-        <li><a href="about.html" title=""><i class="ti-user"></i> view profile</a></li>
-        <li><a href="setting.html" title=""><i class="ti-pencil-alt"></i>edit profile</a></li>
-        <li><a href="#" title=""><i class="ti-target"></i>activity log</a></li>
-        <li><a href="setting.html" title=""><i class="ti-settings"></i>account setting</a></li>
-        <li><a href="logout.html" title=""><i class="ti-power-off"></i>log out</a></li>
-      </ul>
-    </div>
+  <div class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-lg shadow-xl" *ngIf="menuVisible">
+    <span class="block px-4 py-2 text-sm text-gray-700 border-t border-b">User setting <a href="#" title="">see all</a></span>
+    <ul class="log-out">
+      <li><a href="about.html" title="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fa-solid fa-user mr-3"></i>view profile</a></li>
+      <li><a href="setting.html" title="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fa-solid fa-pen-to-square mr-3"></i>edit profile</a></li>
+      <li><a href="#" title="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fa-solid fa-chart-line mr-3"></i>activity log</a></li>
+      <li><a href="setting.html" title="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fa-solid fa-gear mr-3"></i>account setting</a></li>
+      <li><a routerLink="/logout" title="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="ti-power-off mr-3"></i>log out</a></li>
+    </ul>
   </div>
+</div>
