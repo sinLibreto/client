@@ -1,29 +1,21 @@
+// home-routing.module.ts
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { HelpComponent } from './pages/help/help.component';
+
+// Importa otros componentes según sea necesario
 
 const routes: Routes = [
   {
-    path:'',component:HomeComponent,
-    children:[
-      {
-        path:'friend',
-        loadChildren:()=>import('./pages/friend/friend.module').then(m=>m.FriendModule)
-      },
-      {
-        path:'notification',
-        loadChildren:()=>import('./pages/notifications/notifications.module').then(m=>m.NotificationsModule)
-      },
-      {
-        path:'messages',
-        loadChildren:()=>import('./pages/message/message.module').then(m=>m.MessageModule)
-      },
-      {
-        path:'help',
-        loadChildren:()=>import('./pages/help/help.module').then(m=>m.HelpModule)
-      }
+    path: '', component: HomeComponent, 
+    children: [
+      { path: '', component: HomePageComponent },
+      { path: 'help', component: HelpComponent },
+
+      // Define otras rutas secundarias según sea necesario
     ]
-    
   }
 ];
 

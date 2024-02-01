@@ -9,16 +9,28 @@ jQuery(document).ready(function($) {
 	"use strict";
 	
 //----- popup display on window load	
-		function delay(){
-			$(".popup-wraper.subscription").fadeIn();
-		}
-		window.setTimeout( delay, 3000 );
-		
-		$('.popup-closed').on('click', function() {
-		  $('.popup-wraper.subscription').addClass('closed');
-		  return false;
-		});
-	// popup end	
+	function delay(){
+		$(".popup-wraper.subscription").fadeIn();
+	}
+	window.setTimeout( delay, 3000 );
+
+	$('.popup-closed').on('click', function() {
+	  $('.popup-wraper.subscription').addClass('closed');
+	  return false;
+	});
+// popup end
+
+// show hide the top new post div
+$(window).scroll(function() {
+	if ($(this).scrollTop()>150)
+	 {
+	  $('.recent-posts').show(100);
+	 }
+	else
+	{
+		$('.recent-posts').hide(100);
+	 }
+ });
 	
 //------- Notifications Dropdowns
   $('.top-area > .setting-area > li > a').on("click",function(){
@@ -66,7 +78,6 @@ jQuery(document).ready(function($) {
 // add popup upload from gallery	
 	$('.from-gallery').on('click', function () {
 		$('.already-gallery').addClass('active');
-		
 	});
 	
 	$('.canceld').on('click', function () {
@@ -264,7 +275,7 @@ $('.user-img').on('click', function() {
 	
 //------ scrollbar plugin
 	if ($.isFunction($.fn.perfectScrollbar)) {
-		$('.dropdowns, .twiter-feed, .invition, .followers, .chatting-area, .peoples, #people-list, .chat-list > ul, .message-list, .chat-users, .left-menu, .sugestd-photo-caro, .popup.events, .related-tube-psts, .music-list, .more-songs, .media > ul, .conversations, .msg-pepl-list, .menu-slide, .frnds-stories, .modal-body .we-comet, .pt-follower, .pt-chater').perfectScrollbar();
+		$('.dropdowns, .twiter-feed, .invition, .followers, .chatting-area, .peoples, #people-list, .chat-list > ul, .message-list, .chat-users, .left-menu, .sugestd-photo-caro, .popup.events, .related-tube-psts, .music-list, .more-songs, .media > ul, .conversations, .msg-pepl-list, .menu-slide, .frnds-stories, .modal-body .we-comet').perfectScrollbar();
 	}
 
 /*--- socials menu scritp ---*/	
@@ -503,6 +514,58 @@ if ($.isFunction($.fn.loadMoreResults)) {
 }
 	//===== owl carousel  =====//
 	if ($.isFunction($.fn.owlCarousel)) {
+
+		// pod posts       
+		$('.new-pod-post').owlCarousel({
+			items: 3,
+			loop: true,
+			margin: 10,
+			autoplay: false,
+			autoplayTimeout: 1500,
+			smartSpeed: 1000,
+			autoplayHoverPause: true,
+			nav: true,
+			dots: false,
+			center: false,
+			responsiveClass: true,
+			responsive: {
+				0: {
+					items: 1,
+				},
+				600: {
+					items: 2,
+
+				},
+				1000: {
+					items: 3,
+				}
+			}
+		});
+
+		//recent podcast carousel
+		$('.recent-pods').owlCarousel({
+			loop: true,
+			margin: 20,
+			smartSpeed: 1000,
+			responsiveClass: true,
+			nav: false,
+			dots: true,
+			responsive: {
+				0: {
+					items: 1,
+					nav: false,
+					dots: false
+				},
+				600: {
+					items: 2,
+					nav: false
+				},
+				1000: {
+					items: 3,
+					nav: false,
+				}
+			}
+		});
 		
 //books caro	
 	$('.books-caro').owlCarousel({
@@ -996,6 +1059,57 @@ if ($.isFunction($.fn.loadMoreResults)) {
 				}
 			}
 		});
+
+		// game page carousel
+		$('.live-streamer').owlCarousel({
+			items: 8,
+			loop: true,
+			margin: 20,
+			autoplay: false,
+			autoplayTimeout: 1500,
+			smartSpeed: 1000,
+			autoplayHoverPause: true,
+			nav: true,
+			dots: false,
+			responsiveClass:true,
+				responsive:{
+					0:{
+						items:3,
+					},
+					600:{
+						items:3,
+
+					},
+					1000:{
+						items:8,
+					}
+				}
+		});
+
+		$('.video-clips').owlCarousel({
+			items: 3,
+			loop: true,
+			margin: 20,
+			autoplay: false,
+			autoplayTimeout: 1500,
+			smartSpeed: 1000,
+			autoplayHoverPause: true,
+			nav: true,
+			dots: false,
+			responsiveClass:true,
+				responsive:{
+					0:{
+						items:3,
+					},
+					600:{
+						items:3,
+
+					},
+					1000:{
+						items:3,
+					}
+				}
+		});
 		
 	}
 	
@@ -1015,6 +1129,40 @@ if ($.isFunction($.fn.loadMoreResults)) {
         autoplay: true,
         autoplaySpeed: 2000,
     });
+
+	$('.pod-caro1').slick({
+		slidesToShow: 6,
+		  slidesToScroll: 1,
+		  autoplay: true,
+		  autoplaySpeed: 0,
+		  arrows: false,
+		  speed: 13000,
+		  pauseOnHover: false,
+		  cssEase: 'linear',
+		infinite: true,
+	});
+	$('.pod-caro2').slick({
+		slidesToShow: 6,
+		  slidesToScroll: 1,
+		  autoplay: true,
+		  autoplaySpeed: 0,
+		  arrows: false,
+		  speed: 11000,
+		  pauseOnHover: false,
+		  cssEase: 'linear',
+		infinite: true,
+	});
+	$('.pod-caro3').slick({
+		slidesToShow: 6,
+		  slidesToScroll: 1,
+		  autoplay: true,
+		  autoplaySpeed: 0,
+		  arrows: false,
+		  speed: 15000,
+		  pauseOnHover: false,
+		  cssEase: 'linear',
+		infinite: true,
+	});
 
     $('.slick-center-mode').slick({
         centerMode: true,
@@ -1118,7 +1266,7 @@ if ($.isFunction($.fn.loadMoreResults)) {
 //---- calander	
 	if ($.isFunction($.fn.jalendar)) { 
 	 $('#yourId').jalendar({
-			customDay: '11/01/2015',
+			customDay: '11/01/2024',
 			color: '#577e9a', // Unlimited Colors
 			color2: '#57c8bf', // Unlimited Colors
 			lang: 'EN',
@@ -1181,7 +1329,7 @@ if ($.isFunction($.fn.mmenu)) {
 //----- count down timer		
 	if ($.isFunction($.fn.downCount)) {
 		$('.countdown').downCount({
-			date: '11/12/2021 12:00:00',
+			date: '11/12/2026 12:00:00',
 			offset: +10
 		});
 	}

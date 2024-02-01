@@ -1,8 +1,8 @@
 $(document).on('ready', function(){
-
+    
   'use strict';
 
-//   var introguide = introJs();
+  var introguide = introJs();
   // var startbtn   = $('#startdemotour');
   introguide.setOptions({
    steps: [
@@ -31,7 +31,7 @@ $(document).on('ready', function(){
        intro: 'Search New People, Pages, Groups etc',
        position: 'bottom'
    },
-
+   
    ]
   });
   introguide.start();

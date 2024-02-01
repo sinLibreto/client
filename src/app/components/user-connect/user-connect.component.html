@@ -5,13 +5,19 @@
     alt="Jack Carter" class="w-12 h-12 rounded-full cursor-pointer" (click)="toggleMenu()">
 
   <div class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-lg shadow-xl" *ngIf="menuVisible">
-    <span class="block px-4 py-2 text-sm text-gray-700 border-t border-b">User setting <a href="#" title="">see all</a></span>
+    <span class="block px-4 py-2 text-sm text-gray-700 border-t border-b">User setting <a href="#" title="">see
+        all</a></span>
     <ul class="log-out">
-      <li><a href="about.html" title="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fa-solid fa-user mr-3"></i>view profile</a></li>
-      <li><a href="setting.html" title="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fa-solid fa-pen-to-square mr-3"></i>edit profile</a></li>
-      <li><a href="#" title="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fa-solid fa-chart-line mr-3"></i>activity log</a></li>
-      <li><a href="setting.html" title="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="fa-solid fa-gear mr-3"></i>account setting</a></li>
-      <li><a routerLink="/logout" title="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i class="ti-power-off mr-3"></i>log out</a></li>
+      <a routerLink="/user/view-profile"  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+        <i class="fa-solid fa-user mr-3"></i>view profile
+      </a>
+      <li><a  routerLink="/user/edit-profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i
+            class="fa-solid fa-pen-to-square mr-3"></i>edit profile</a></li>
+
+      <li><a routerLink="/user/setting-profile"  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i
+            class="fa-solid fa-gear mr-3"></i>account setting</a></li>
+      <li><a routerLink="/logout" title="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><i
+            class="ti-power-off mr-3"></i>log out</a></li>
     </ul>
   </div>
 </div>

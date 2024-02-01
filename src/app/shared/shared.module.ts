@@ -22,6 +22,7 @@ import { FooterHomeComponent } from './footer-home/footer-home.component';
     CommonModule,
     ComponentsModule,
     RouterModule
+   
   ],
   exports:[
     HeaderComponent,

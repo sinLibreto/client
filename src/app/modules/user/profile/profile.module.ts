@@ -13,7 +13,12 @@ import { AccountSettingComponent } from './account-setting/account-setting.compo
     AccountSettingComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+  ],
+  exports:[
+    ViewProfileComponent,
+    EditProfileComponent,
+    AccountSettingComponent
   ]
 })
 export class ProfileModule { }
