@@ -442,15 +442,15 @@
    * (Internal) Adds a class to an element.
    */
 
-  function addClass(element, name) {
-    var oldList = classList(element),
-        newList = oldList + name;
+  // function addClass(element, name) {
+  //   var oldList = classList(element),
+  //       newList = oldList + name;
 
-    if (hasClass(oldList, name)) return;
+  //   if (hasClass(oldList, name)) return;
 
-    // Trim the opening space.
-    element.className = newList.substring(1);
-  }
+  //   // Trim the opening space.
+  //   element.className = newList.substring(1);
+  // }
 
   /**
    * (Internal) Removes a class from an element.
