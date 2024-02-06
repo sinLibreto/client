@@ -1,19 +1,23 @@
-// home-routing.module.ts
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home.component';
-
-// Importa otros componentes según sea necesario
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { HomeComponent } from "./home.component";
 
 const routes: Routes = [
   {
-    path:'', component:HomeComponent
-  }
-
+    path: "",
+    component: HomeComponent,
+    children: [
+      {
+        path: "user",
+        loadChildren: () =>
+          import("./pages/user-home/user-home.module").then((m) => m.UserHomeModule),
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HomeRoutingModule { }
+export class HomeRoutingModule {}
