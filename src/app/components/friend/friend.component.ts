@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./friend.component.css']
 })
 export class FriendComponent {
+  isOpen = false;
+
+  toggleDropdown() {
+    this.isOpen = !this.isOpen;
+  }
+
+  onClickOutside(event: Event) {
+  }
 
 }

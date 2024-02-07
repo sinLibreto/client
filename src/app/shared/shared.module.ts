@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SidebarRigthComponent } from './sidebar-rigth/sidebar-rigth.component';
 import { SidebarLeftComponent } from './sidebar-left/sidebar-left.component';
 import { FooterHomeComponent } from './footer-home/footer-home.component';
+import { Page404Component } from './page-404/page-404.component';
 
 
 
@@ -16,7 +17,8 @@ import { FooterHomeComponent } from './footer-home/footer-home.component';
     FooterComponent,
     SidebarRigthComponent,
     SidebarLeftComponent,
-    FooterHomeComponent
+    FooterHomeComponent,
+    Page404Component
   ],
   imports: [
     CommonModule,

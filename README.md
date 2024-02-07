@@ -1074,3 +1074,112 @@
 
   <!-- left sidebar menu -->
 
+
+
+<div class="flex flex-col h-screen">
+
+  <!-- Header -->
+  <app-header class="w-full"></app-header>
+
+  <!-- Contenido principal y barras laterales -->
+  <div class="flex flex-1 overflow-hidden">
+
+    <!-- Sidebar Izquierdo -->
+    <app-sidebar-left class="hidden md:block md:w-64 lg:w-80 bg-gray-800 p-4 overflow-y-auto"></app-sidebar-left>
+
+    <!-- Contenido Principal -->
+    <app-home class="w-full overflow-y-auto"></app-home>
+
+    <!-- Sidebar Derecho -->
+    <app-sidebar-rigth class="hidden md:block md:w-64 lag:w-80 bg-gray-800 p-4 overflow-y-auto"></app-sidebar-rigth>
+
+  </div>
+
+
+
+</div>
+
+
+
+<div class="flex flex-col h-screen">
+  <!-- Header -->
+  <div class="flex justify-between items-center bg-gray-200 p-4">
+    <div class="flex items-center space-x-4">
+      <div class="bg-gray-400 p-2">Logo (Feed)</div>
+      <div class="flex space-x-2">
+        <input class="border p-1" type="text" placeholder="Buscador">
+        <button class="bg-blue-500 text-white p-1">Crear Página</button>
+      </div>
+    </div>
+    <div class="flex space-x-2">
+      <div class="bg-gray-400 p-2">ICONOS DE PITNIK</div>
+      <div class="bg-gray-400 p-2">ICONOS DE PITNIK</div>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="flex-grow flex">
+    <!-- Sidebar -->
+    <div class="w-1/4 bg-gray-300 p-4 flex flex-col space-y-4">
+      <div class="bg-gray-400 p-2">MENÚ</div>
+      <!-- Agrupación de menú para 'Mi Espacio' -->
+      <div class="bg-gray-400 p-2">MI ESPACIO</div>
+      <div class="bg-gray-400 p-2">CHATS PÚBLICOS</div>
+      <!-- Más elementos del menú agrupados -->
+    </div>
+
+    <!-- Main Section -->
+    <div class="w-1/2 p-4">
+      <div class="bg-gray-300 p-4">
+        <div class="flex justify-between">
+          <div class="bg-gray-400 p-2">Nombres (Apodo) Espacio para Badges</div>
+          <!-- Menú contextual basado en el perfil del usuario -->
+          <div class="bg-gray-400 p-2">MENÚ DE PERFIL</div>
+        </div>
+        <div class="flex flex-col space-y-4 mt-4">
+          <!-- Contenido principal como 'Acerca de mí', 'Fotos', etc. -->
+          <div class="bg-gray-400 p-2">Acerca de mí</div>
+          <!-- Más secciones del perfil -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="w-1/4 bg-gray-300 p-4 flex flex-col space-y-4">
+      <!-- Agrupación de opciones relacionadas con el usuario -->
+      <div class="bg-gray-400 p-2">PERFIL PROFESIONAL</div>
+      <div class="bg-gray-400 p-2">AMIGOS</div>
+      <!-- Más opciones de perfil -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="bg-gray-200 p-4">
+    <!-- Información del pie de página -->
+    Footer content here
+  </div>
+</div>
+
+
+<div class="flex flex-col h-screen">
+  <app-header></app-header>
+
+  <div class="flex-grow overflow-auto">
+    <router-outlet></router-outlet>
+  </div>
+
+  <div class="fixed-sidebar right">
+    <div class="chat-friendz">
+      <app-sidebar-rigth></app-sidebar-rigth>
+    </div>
+  </div>
+
+  <div class="fixed-sidebar left">
+    <div class="menu-left">
+      <app-sidebar-left></app-sidebar-left>
+    </div>
+
+  </div>
+
+
+</div>

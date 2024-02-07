@@ -9,6 +9,7 @@ import { MessagesAllComponent } from './messages-all/messages-all.component';
 import { HelpComponent } from './help/help.component';
 import { UserConnectComponent } from './user-connect/user-connect.component';
 import { RouterModule } from '@angular/router';
+import { AddFriendComponent } from './add-friend/add-friend.component';
 
 
 
@@ -21,7 +22,9 @@ import { RouterModule } from '@angular/router';
     NotificationsAllComponent,
     MessagesAllComponent,
     HelpComponent,
-    UserConnectComponent
+    UserConnectComponent,
+    AddFriendComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -35,7 +38,8 @@ import { RouterModule } from '@angular/router';
     NotificationsAllComponent,
     MessagesAllComponent,
     HelpComponent,
-    UserConnectComponent
+    UserConnectComponent,
+    AddFriendComponent
 
   ]
 })

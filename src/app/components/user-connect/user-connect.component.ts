@@ -6,10 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-connect.component.css']
 })
 export class UserConnectComponent {
-  menuVisible: boolean = false;
-
-  toggleMenu() {
-    this.menuVisible = !this.menuVisible;
-  }
+  
 
 }

@@ -1,17 +1,13 @@
-<div class="dropdowns helps">
-    <span>Quick Help</span>
-    <form method="post">
-      <input type="text" placeholder="How can we help you?">
-    </form>
-    <span>Help with this page</span>
-    <ul class="help-drop">
-      <li><a href="forum.html" title=""><i class="fa fa-book"></i>Community & Forum</a></li>
-      <li><a href="faq.html" title=""><i class="fa fa-question-circle-o"></i>FAQs</a></li>
-      <li><a href="career.html" title=""><i class="fa fa-building-o"></i>Carrers</a></li>
-      <li><a href="privacy.html" title=""><i class="fa fa-pencil-square-o"></i>Terms &
-          Policy</a></li>
-      <li><a href="#" title=""><i class="fa fa-map-marker"></i>Contact</a></li>
-      <li><a href="#" title=""><i class="fa fa-exclamation-triangle"></i>Report a Problem</a>
-      </li>
-    </ul>
+<div class="relative" (click)="toggleDropdown()">
+	<!-- Botón de notificaciones -->
+	<button class="relative p-1   text-white">
+    <i class="fa-solid fa-circle-info"></i>
+    		</button>
+	<!-- Dropdown -->
+	<div *ngIf="isOpen" class="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg z-50">
+	  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">message1</a>
+	  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">message 2</a>
+	  <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Ver todas</a>
+	</div>
   </div>
+  
