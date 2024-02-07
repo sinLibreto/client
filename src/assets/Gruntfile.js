@@ -5,6 +5,7 @@
 		    dist: {
 		      src: [
 		      	  'css/themify-icons.css', 
+		      	  'css/themify-icons.css', 
 				  'css/jquery-ui.min.css', 
 				  'css/bootstrap.min.css',
 				  'css/fontawesome-all.min.css', 
