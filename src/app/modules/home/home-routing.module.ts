@@ -14,7 +14,11 @@ const routes: Routes = [
       },
       {
         path: "user-profile",
-        loadChildren: () => import("../user-profile/user-profile.module").then((m) => m.UserProfileModule)
+        loadChildren: () => import("../user/pages/user-profile/user-profile.module").then((m) => m.UserProfileModule)
+      },
+      {
+        path: "account-setting",
+        loadChildren: () => import("../user/pages/account-setting/account-setting.module").then((m) => m.AccountSettingModule)
       },
       // Aquí puedes agregar más rutas hijas según sea necesario
     ]
