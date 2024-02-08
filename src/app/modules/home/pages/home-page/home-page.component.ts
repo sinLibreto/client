@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-home-page',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
+  showExtraComponents: boolean = true;
 
+  constructor(private router: Router) {
+    // Escuchar los eventos de navegación y filtrar solo los eventos de NavigationEnd
+    this.router.events.pipe(
+      filter((event): event is NavigationEnd => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      // La propiedad 'urlAfterRedirects' contiene la URL a la que se redirigió después de todos los redireccionamientos.
+      this.showExtraComponents = event.urlAfterRedirects === '/home' || event.urlAfterRedirects === '/';
+    });
+  }
 }

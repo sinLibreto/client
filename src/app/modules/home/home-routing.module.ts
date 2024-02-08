@@ -20,10 +20,10 @@ const routes: Routes = [
         path: "account-setting",
         loadChildren: () => import("../user/pages/account-setting/account-setting.module").then((m) => m.AccountSettingModule)
       },
-      {
-        path: "edit-profile",
-        loadChildren: () => import("../user/pages/edit-profile/edit-profile.module").then((m) => m.EditProfileModule)
-      },
+      // {
+      //   path: "edit-profile",
+      //   loadChildren: () => import("../user/pages/edit-profile/edit-profile.module").then((m) => m.EditProfileModule)
+      // },
       // Aquí puedes agregar más rutas hijas según sea necesario
     ]
   },

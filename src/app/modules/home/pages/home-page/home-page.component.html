@@ -1,1 +1,7 @@
-<router-outlet></router-outlet>
+<!-- home.component.html -->
+<div *ngIf="showExtraComponents">
+    <app-stories class="block"></app-stories>
+    <app-top-stories class="block"></app-top-stories>
+  </div>
+  <router-outlet></router-outlet>
+  
