@@ -1,69 +1,73 @@
-<div class="theme-layout">
-    <!-- Page Header -->
-    <section class="bg-white text-center py-10">
-      <div class="max-w-2xl mx-auto">
-        <h2 class="text-4xl font-bold text-gray-800">Now You are out of Pitnik</h2>
-        <p class="text-gray-600 mt-2">
-          Discover what's happening right now in the world.
-        </p>
-      </div>
-      <figure>
-        <!-- Reemplazar con la ruta correcta a la imagen -->
-        <img src="path_to_images/baner-forum.png" alt="" class="mx-auto">
-      </figure>
-    </section>
-  
-    <!-- Sub Header -->
-    <section class="bg-gray-100 py-10">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-wrap justify-center -mx-4">
-          <!-- Recent Login -->
-          <div class="w-full lg:w-1/2 px-4">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <h4 class="text-xl font-bold text-gray-800 mb-4">Recent Login</h4>
-              <p class="text-gray-600 mb-6">Next Time you login click your picture. To remove an account from this page click cross.</p>
-              <div class="flex -mx-2">
-                <!-- User account circles -->
-                <div class="w-1/3 px-2 flex flex-col items-center">
-                  <!-- Replace with user image -->
-                  <div class="w-24 h-24 rounded-full bg-gray-300 flex items-center justify-center text-2xl text-gray-600">
-                    <!-- <i class="ti-plus"></i> -->
-                    <!-- aqui la imagen del ultimo user en localstorage -->
-                    
-                  </div>
-                  <span class="mt-2 text-sm text-gray-700">Cuenta reciente</span>
-                </div>
-                <div class="w-1/3 px-2 flex flex-col items-center">
-                    <!-- Replace with user image -->
-                    <div class="w-24 h-24 rounded-full bg-gray-300 flex items-center justify-center text-2xl text-gray-600">
-                      <i class="ti-plus"></i>
-                    </div>
-                    <span class="mt-2 text-sm text-gray-700">Agregar cuenta</span>
-                  </div>
-                  
-              </div>
-            </div>
-          </div>
-  
-          <!-- Login Form -->
-          <div class="w-full lg:w-1/2 px-4 mt-8 lg:mt-0">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <div class="mb-4">
-                <h4 class="text-xl font-bold text-gray-800 flex items-center"><i class="fa fa-key mr-2"></i>Login</h4>
-                <p class="text-gray-600">Login again, you have recently signout from here</p>
-              </div>
-              <form method="post" class="space-y-4">
-                <input type="text" class="w-full p-3 border rounded text-gray-700" placeholder="User Name" value="Adam James">
-                <input type="password" class="w-full p-3 border rounded text-gray-700" placeholder="Password" value="12345678">
-                <button routerLink="/login" type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Logins</button>
-              </form>
-              <div class="text-center mt-4">
-                <a routerLink="/register" class="text-blue-600 hover:underline">Create New Signup</a>
-                <p class="text-gray-600 text-sm mt-2">By clicking Sign Up, you agree to our <a href="#" class="text-blue-600 hover:underline">Terms & Policy</a>. You may receive SMS notifications from us and can opt out at any time.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  <app-footer></app-footer>
+
+
+	<section>
+		<div class="page-header">
+			<div class="header-inner">
+				<h2>Now You are out of Pitnik</h2>
+				<p>
+					Discover what's happining right now in the world.
+				</p>
+			</div>
+			<figure><img src="assets/images/resources/baner-forum.png" alt=""></figure>
+		</div>
+	</section>
+	
+	<section>
+		<div class="gap gray-bg">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="offset-lg-1 col-lg-10">
+						<div class="row border-center">
+							<div class="col-lg-6 col-md-6">
+								<div class="already-log">
+									<h4>Recent Login</h4>
+									<p>Next Time you login click your picture. To remove an account from this page click cross.</p>
+									<div class="log-user">
+										<div class="row">
+											<div class="col-lg-4 col-md-4 col-sm-4">
+												<div class="user-log">
+													<i class="ti-close" title="Remove Account"></i>
+													<a href="" title=""><img src="assets/images/resources/author.jpg" alt="">
+													<span>Adam James</span>
+													</a>
+												</div>
+											</div>
+											<div class="col-lg-4 col-md-4 col-sm-4">
+												<div class="user-log">
+													<i class="ti-close" title="Remove Account"></i>
+													<a href="" title=""><img src="assets/images/resources/author2.jpg" alt="">
+													<span>Emma Watson</span>
+													</a>
+												</div>
+											</div>
+											<div class="col-lg-4 col-md-4 col-sm-4">
+												<div class="user-add">
+													<div><i class="ti-plus"></i><span>Add Account</span></div>
+												</div>
+											</div>
+										</div>	
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6">
+								<div class="logout-f">
+									<h4><i class="fa-regular fa-right-to-bracket"></i> Login</h4>
+									<p>Login again, you have recently signout from here</p>
+									<div class="logout-form">
+										<form method="post" class="again-login">
+											<input type="text" placeholder="User Name" value="Adam James">
+											<input type="password" placeholder="Password" value="12345678">
+											<button  routerLink="/home" type="submit">Login</button>
+										</form>
+										<a routerLink="/auth/register" title="">Create New Signup</a>
+										<p>By clicking Sign Up, you agree to our <a href="#" title="">Terms & Policy</a>. You may receive SMS notifications from us and can opt out at any time.</p>
+									</div>	
+								</div>	
+							</div>
+						</div>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>

@@ -2,6 +2,8 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./home.component";
+import { LoginComponent } from "../auth/login/login.component";
+import { LogoutComponent } from "../auth/logout/logout.component";
 
 const routes: Routes = [
   {
@@ -20,13 +22,12 @@ const routes: Routes = [
         path: "account-setting",
         loadChildren: () => import("../user/pages/account-setting/account-setting.module").then((m) => m.AccountSettingModule)
       },
-      // {
-      //   path: "edit-profile",
-      //   loadChildren: () => import("../user/pages/edit-profile/edit-profile.module").then((m) => m.EditProfileModule)
-      // },
+     
       // Aquí puedes agregar más rutas hijas según sea necesario
     ]
+    
   },
+
 ];
 
 @NgModule({
