@@ -1,86 +1,70 @@
-<section>
-	<div class="gap2 gray-bg">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="row merged20" id="page-contents">
-						<div class="col-lg-3">
-							<!-- sidebarhome -->
-							<app-sidebar-home></app-sidebar-home>
-						</div>
-						<div class="col-lg-6">
-							<!-- Storis -->
-							<app-stories></app-stories>
-
-							<div class="central-meta postbox">
-								<!-- add post new box -->
-
-								<app-create-post></app-create-post>
-							</div>
-						
-							<div class="central-meta">
-								<app-reelies></app-reelies>
-							</div>
-							<!-- invitar amigos -->
-							<div class="central-meta">
-								<app-friends-invited-slider></app-friends-invited-slider>
-							</div>
-							<!-- suggested friends -->
-							<div class="central-meta">
-								<app-suggested-friends-slider></app-suggested-friends-slider>
-							</div>
-							<div class="adb" style="display: inline-block;">
-								<div class="adv-baner">
-									<img alt="" src="assets/images/resources/adv-baner.jpg">
-								</div>
-							</div>
-							<div class="loadMore">
-								<div class="central-meta item">
-									<app-post-reeliest></app-post-reeliest>
-								</div>
-							</div>
-						</div>
-						<!-- centerl meta -->
-						<div class="col-lg-3">
-							<aside class="sidebar static right">
-								<!-- how it's work -->
-
-								<app-how-work-yeebam></app-how-work-yeebam>
-								<div class="widget">
-									<app-your-page></app-your-page>
-								</div>
-								<!-- page like widget -->
-								<div class="widget">
-									<app-events></app-events>
-								</div>
-								<!-- explore events -->
-								<div class="widget">
-									<div class="post-creat">
-										<div class="bg-feature">
-											<img src="assets/images/resources/post-createbg.jpg" alt="">
-											<span>Create</span>
-										</div>
-										<div class="create-meta">
-											<img src="assets/images/logo2.png" alt="">
-											<p>
-												The Best Post on Pitnik for you, Pulled from the most active communities
-												on pitnik. Check here to see the most shared, upvoted, and commented
-												content on the internet.
-											</p>
-											<a class="main-btn2" href="#" title="">Create Post</a>
-										</div>
-									</div>
-								</div>
-								<div class="widget">
-									<app-profile-intro></app-profile-intro>
-								</div>
-							
-							</aside>
-						</div>
-					
-					</div>
-				</div>
-			</div>
+<!-- home-page.component.html -->
+<section *ngIf="showExtraComponents" class="gap2 gray-bg">
+	<div class="container">
+	  <div class="row">
+		<div class="col-lg-3">
+		  <app-sidebar-home></app-sidebar-home>
 		</div>
+		<div class="col-lg-6">
+		  <app-stories></app-stories>
+		  <div class="central-meta postbox">
+			<app-create-post></app-create-post>
+		  </div>
+		  <div class="central-meta">
+			<app-reelies></app-reelies>
+		  </div>
+		  <div class="central-meta">
+			<app-friends-invited-slider></app-friends-invited-slider>
+		  </div>
+		  <div class="central-meta">
+			<app-suggested-friends-slider></app-suggested-friends-slider>
+		  </div>
+		  <div class="adb" style="display: inline-block;">
+			<div class="adv-baner">
+			  <img alt="" src="assets/images/resources/adv-baner.jpg">
+			</div>
+		  </div>
+		  <div class="loadMore">
+			<div class="central-meta item">
+			  <app-post-reeliest></app-post-reeliest>
+			</div>
+		  </div>
+		</div>
+		<div class="col-lg-3">
+		  <aside class="sidebar static right">
+			<app-how-work-yeebam></app-how-work-yeebam>
+			<div class="widget">
+			  <app-your-page></app-your-page>
+			</div>
+			<div class="widget">
+			  <app-events></app-events>
+			</div>
+			<div class="widget">
+			  <div class="post-creat">
+				<div class="bg-feature">
+				  <img src="assets/images/resources/post-createbg.jpg" alt="">
+				  <span>Create</span>
+				</div>
+				<div class="create-meta">
+				  <img src="assets/images/logo2.png" alt="">
+				  <p>
+					The Best Post on Pitnik for you, Pulled from the most active communities
+					on pitnik. Check here to see the most shared, upvoted, and commented
+					content on the internet.
+				  </p>
+				  <a class="main-btn2" href="#" title="">Create Post</a>
+				</div>
+			  </div>
+			</div>
+			<div class="widget">
+			  <app-profile-intro></app-profile-intro>
+			</div>
+		  </aside>
+		</div>
+	  </div>
 	</div>
-</section>
+  </section>
+  
+  <!-- Esto se mostrará cuando 'showExtraComponents' sea falso -->
+  <router-outlet *ngIf="!showExtraComponents"></router-outlet>
+  
