@@ -17,6 +17,7 @@ import { TopStoriesComponent } from './top-stories/top-stories.component';
 import { FriendsInvitedSliderComponent } from './friends-invited-slider/friends-invited-slider.component';
 import { SuggestedFriendsSliderComponent } from './suggested-friends-slider/suggested-friends-slider.component';
 import { PostReeliestComponent } from './post-reeliest/post-reeliest.component';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 
 
@@ -38,6 +39,7 @@ import { PostReeliestComponent } from './post-reeliest/post-reeliest.component';
     FriendsInvitedSliderComponent,
     SuggestedFriendsSliderComponent,
     PostReeliestComponent,
+    CreatePostComponent,
     
   ],
   imports: [
@@ -61,6 +63,7 @@ import { PostReeliestComponent } from './post-reeliest/post-reeliest.component';
     FriendsInvitedSliderComponent,
     SuggestedFriendsSliderComponent,
     PostReeliestComponent,
+    CreatePostComponent
 
   ]
 })

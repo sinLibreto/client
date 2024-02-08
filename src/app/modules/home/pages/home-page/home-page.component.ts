@@ -11,7 +11,6 @@ export class HomePageComponent {
   showExtraComponents: boolean = true;
 
   constructor(private router: Router) {
-    // Escuchar los eventos de navegación y filtrar solo los eventos de NavigationEnd
     this.router.events.pipe(
       filter((event): event is NavigationEnd => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
