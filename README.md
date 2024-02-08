@@ -1183,3 +1183,83 @@
 
 
 </div>
+
+
+
+<div class="wavy-wraper">
+  <div class="wavy">
+    <span style="--i:1;">p</span>
+    <span style="--i:2;">i</span>
+    <span style="--i:3;">t</span>
+    <span style="--i:4;">n</span>
+    <span style="--i:5;">i</span>
+    <span style="--i:6;">k</span>
+    <span style="--i:7;">.</span>
+    <span style="--i:8;">.</span>
+    <span style="--i:9;">.</span>
+  </div>
+</div>
+<div class="theme-layout">
+
+  <div class="postoverlay"></div>
+
+
+  <div class="topbar stick">
+    <app-header></app-header>
+  </div>
+  <!-- topbar -->
+
+  <div class="fixed-sidebar right">
+    <app-sidebar-rigth></app-sidebar-rigth>
+  </div>
+
+
+  <div class="fixed-sidebar left">
+    <app-sidebar-left></app-sidebar-left>
+  </div>
+
+
+
+  <!-- left sidebar menu -->
+
+  <section>
+    <div class="gap2 gray-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row merged20" id="page-contents">
+              <div class="col-lg-3">
+                <aside class="sidebar static left">
+                  <!-- birthday widget -->
+                  <div class="widget">
+                    <h4 class="widget-title">Enviar solicitud</h4>
+                    <app-add-friend></app-add-friend>
+                  </div>
+
+                  <app-sidebar-home></app-sidebar-home>
+                  <!-- Shortcuts -->
+
+                </aside>
+              </div>
+              <!-- sidebar -->
+              <div class="col-lg-6">
+                <!-- Stories -->
+                <app-stories></app-stories>
+                <!-- add post new box -->
+                <app-user></app-user>
+
+                <app-reelies></app-reelies>
+                <!-- top stories -->
+                <app-top-stories></app-top-stories>
+                <!-- Invite friends -->
+                <app-suggested-friends-slider></app-suggested-friends-slider>
+                <app-post-reeliest></app-post-reeliest>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
