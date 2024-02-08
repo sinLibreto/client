@@ -18,6 +18,10 @@ import { FriendsInvitedSliderComponent } from './friends-invited-slider/friends-
 import { SuggestedFriendsSliderComponent } from './suggested-friends-slider/suggested-friends-slider.component';
 import { PostReeliestComponent } from './post-reeliest/post-reeliest.component';
 import { CreatePostComponent } from './create-post/create-post.component';
+import { HowWorkYeebamComponent } from './how-work-yeebam/how-work-yeebam.component';
+import { YourPageComponent } from './your-page/your-page.component';
+import { EventsComponent } from './events/events.component';
+import { ProfileIntroComponent } from './profile-intro/profile-intro.component';
 
 
 
@@ -40,6 +44,10 @@ import { CreatePostComponent } from './create-post/create-post.component';
     SuggestedFriendsSliderComponent,
     PostReeliestComponent,
     CreatePostComponent,
+    HowWorkYeebamComponent,
+    YourPageComponent,
+    EventsComponent,
+    ProfileIntroComponent,
     
   ],
   imports: [
@@ -63,7 +71,11 @@ import { CreatePostComponent } from './create-post/create-post.component';
     FriendsInvitedSliderComponent,
     SuggestedFriendsSliderComponent,
     PostReeliestComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    HowWorkYeebamComponent,
+    YourPageComponent,
+    EventsComponent,
+    ProfileIntroComponent,
 
   ]
 })
