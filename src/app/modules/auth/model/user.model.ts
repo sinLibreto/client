@@ -28,7 +28,7 @@ export class Notifications {
   }
   
   export class UserModel {
-    _id: string;
+    // _id: string;
     authId: string;
     uId: string;
     username: string;
@@ -51,7 +51,7 @@ export class Notifications {
     social: Social;
   
     constructor() {
-      this._id = '';
+      // this._id = '';
       this.authId = '';
       this.uId = '';
       this.username = '';

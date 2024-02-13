@@ -4,9 +4,9 @@ export class AuthModel {
   password: string;
   email: string;
   avatarColor: string;
-  _id: string;
-  authId: string;
-  uId: string;
+  // _id: string;
+  // authId: string;
+  // uId: string;
   avatarImage?: string;
 
 
@@ -22,8 +22,8 @@ export class AuthModel {
     this.email = email;
     this.avatarColor = avatarColor;
     this.avatarImage = avatarImage;
-    this._id = '';
-    this.authId = '';
-    this.uId = '';
+    // this._id = '';
+    // this.authId = '';
+    // this.uId = '';
   }
 }
