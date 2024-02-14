@@ -19,7 +19,7 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
 
-  // Método para registrar un nuevo usuario
+ 
   signup(data: IResgisterForm): Observable<UserResponse> {
     return this.http.post<UserResponse>(`${this.base_url}/signup`, data, { withCredentials: true }).pipe(
       tap((resp) => {
@@ -36,7 +36,7 @@ export class AuthService {
 login(data: { username: string; password: string; }): Observable<UserResponse> {
   return this.http.post<UserResponse>(`${this.base_url}/signin`, data, { withCredentials: true }).pipe(
     tap((resp) => {
-      this.guardarLocalStorage(resp.token); // Guarda el token en el localStorage
+      this.guardarLocalStorage(resp.token); 
     })
   );
 }

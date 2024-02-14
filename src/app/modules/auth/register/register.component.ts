@@ -24,28 +24,6 @@ export class RegisterComponent {
 
   constructor(private fb: FormBuilder, private authService: AuthService) {}
 
-  // registerUser() {
-  //   this.formSubmitted = true;
-  //   if (this.registerForm.invalid) {
-  //     return;
-  //   }
-
-  //   const formData: IResgisterForm = {
-  //     username: this.registerForm.get('username')!.value,
-  //     lastname: this.registerForm.get('lastname')!.value,
-  //     password: this.registerForm.get('password')!.value,
-  //     email: this.registerForm.get('email')!.value,
-  //     term: this.registerForm.get('term')!.value,
-  //     avatarColor: 'blue', 
-  //     avatarImage: this.registerForm.get('avatarImage')!.value 
-  //   };
-
-  //   this.authService.signup(formData).subscribe({
-  //     next: (resp) => console.log('Usuario creado', resp),
-  //     error: (err) => console.error('Error al crear usuario', err)
-  //   });
-  // }
-
 
 registerUser() {
   this.formSubmitted = true;

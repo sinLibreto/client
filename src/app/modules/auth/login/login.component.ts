@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import Swal from 'sweetalert2'; // Importa SweetAlert2
 
 @Component({
   selector: 'app-login',
@@ -17,32 +18,45 @@ export class LoginComponent {
     private router: Router
   ) {
     this.loginForm = this.fb.group({
-      username: ['', [Validators.required]], // Usar username en lugar de email
-      password: ['', [Validators.required]]
+      username: ['', [Validators.required]], 
+      password: ['', [Validators.required]],
+      rememberme: [false]
     });
-  }
-
-  ngOnInit(): void {
   }
 
   onLogin(): void {
     if (this.loginForm.invalid) {
-      return; // Si el formulario es inválido, no hacer nada
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Por favor, completa todos los campos requeridos.',
+      });
+      return; // Si el formulario es inválido, muestra una alerta y no hace nada más
     }
     
-    // Crea un objeto con las credenciales del formulario
     const credentials = {
       username: this.loginForm.value.username,
       password: this.loginForm.value.password
     };
 
-    // Llama al método de login del servicio de autenticación
     this.authService.login(credentials).subscribe({
       next: (response) => {
-        console.log('Inicio de sesión exitoso:', response.user);
-        this.router.navigateByUrl('/home'); // Redirige al usuario a la página de inicio después del login
+        console.log('Inicio de sesión exitoso:', response);
+        Swal.fire({
+          icon: 'success',
+          title: 'Inicio de sesión exitoso',
+          showConfirmButton: false,
+          timer: 1500
+        }).then(() => {
+          this.router.navigateByUrl('/home'); // Redirige al usuario a la página de inicio después del login
+        });
       },
       error: (error) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error en el inicio de sesión',
+          text: 'Usuario o contraseña incorrectos',
+        });
         console.error('Error en el inicio de sesión:', error);
       }
     });

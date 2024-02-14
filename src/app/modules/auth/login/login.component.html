@@ -21,12 +21,12 @@
                             <i class="fa-regular fa-right-to-bracket"></i> login
                             <span>sign in now and meet the awesome Friends around the world.</span>
                         </div>
-                        <form class="we-form" method="post">
-                            <input type="text" placeholder="Email">
-                            <input type="password" placeholder="Password">
-                            <input type="checkbox"><label>remember me</label>
-                            <button  routerLink="/home" type="submit" data-ripple="">sign in</button>
-                            <a class="forgot underline" href="#" title="">forgot password?</a>
+                        <form class="we-form" (ngSubmit)="onLogin()" [formGroup]="loginForm" autocomplete="off">
+                            <input formControlName="username"  type="email" placeholder="username" class="text-sky-950">
+                            <input formControlName="password" type="password" placeholder="Password" class="text-sky-950">
+                            <input formControlName="rememberme" type="checkbox"><label>remember me</label>
+                            <button  type="submit" data-ripple="">sign in</button>
+                            <a class="forgot underline"  routerLink="/home" title="">forgot password?</a>
                         </form>
 
                         <span>don't have an account? <a class="we-account underline" routerLink="/auth/register" title="">register now</a></span>

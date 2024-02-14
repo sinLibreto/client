@@ -77,6 +77,7 @@ export class Notifications {
   
   export class UserResponse {
     message: string;
+    remember:boolean | undefined;
     user: UserModel;
     token: string;
   
