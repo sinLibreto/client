@@ -18,7 +18,7 @@ export class LoginComponent {
     private router: Router
   ) {
     this.loginForm = this.fb.group({
-      username: ['caricias', [Validators.required]], 
+      username: [ localStorage.getItem('username') || '', [Validators.required]], 
       password: ['dsadds', [Validators.required]],
       rememberme: [false]
     });
