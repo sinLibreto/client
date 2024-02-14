@@ -78,9 +78,22 @@ export class AuthService {
     return localStorage.getItem("token") || "";
   }
 
-  // Cerrar sesión
   logout(): void {
-    localStorage.removeItem("token");
-    this.router.navigateByUrl("/login");
+    // Realiza la petición al endpoint /signout del servidor
+    this.http.get(`${this.base_url}/signout`, { withCredentials: true })
+      .pipe(
+        tap(() => {
+          localStorage.removeItem('token'); // Limpia el token del localStorage
+          this.router.navigateByUrl('/login'); // Redirige al usuario a la página de inicio de sesión
+        })
+      )
+      .subscribe({
+        next: (resp) => {
+          console.log('Logout successful', resp);
+        },
+        error: (error) => {
+          console.error('Error during logout', error);
+        }
+      });
   }
 }
