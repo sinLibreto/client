@@ -19,7 +19,7 @@ export class LoginComponent {
   ) {
     this.loginForm = this.fb.group({
       username: [ localStorage.getItem('username') || '', [Validators.required]], 
-      password: ['dsadds', [Validators.required]],
+      password: ['', [Validators.required]],
       rememberme: [false]
     });
   }
