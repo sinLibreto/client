@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { IResgisterForm } from '../interfaces/register-form.interface';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-register',
@@ -23,27 +24,71 @@ export class RegisterComponent {
 
   constructor(private fb: FormBuilder, private authService: AuthService) {}
 
-  registerUser() {
-    this.formSubmitted = true;
-    if (this.registerForm.invalid) {
-      return;
-    }
+  // registerUser() {
+  //   this.formSubmitted = true;
+  //   if (this.registerForm.invalid) {
+  //     return;
+  //   }
 
-    const formData: IResgisterForm = {
-      username: this.registerForm.get('username')!.value,
-      lastname: this.registerForm.get('lastname')!.value,
-      password: this.registerForm.get('password')!.value,
-      email: this.registerForm.get('email')!.value,
-      term: this.registerForm.get('term')!.value,
-      avatarColor: 'blue', // Asumir un valor por defecto o extraerlo del formulario si es necesario
-      avatarImage: this.registerForm.get('avatarImage')!.value // Asegúrate de manejar este campo correctamente
-    };
+  //   const formData: IResgisterForm = {
+  //     username: this.registerForm.get('username')!.value,
+  //     lastname: this.registerForm.get('lastname')!.value,
+  //     password: this.registerForm.get('password')!.value,
+  //     email: this.registerForm.get('email')!.value,
+  //     term: this.registerForm.get('term')!.value,
+  //     avatarColor: 'blue', 
+  //     avatarImage: this.registerForm.get('avatarImage')!.value 
+  //   };
 
-    this.authService.signup(formData).subscribe({
-      next: (resp) => console.log('Usuario creado', resp),
-      error: (err) => console.error('Error al crear usuario', err)
+  //   this.authService.signup(formData).subscribe({
+  //     next: (resp) => console.log('Usuario creado', resp),
+  //     error: (err) => console.error('Error al crear usuario', err)
+  //   });
+  // }
+
+
+registerUser() {
+  this.formSubmitted = true;
+  if (this.registerForm.invalid) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'Por favor, completa el formulario correctamente.',
     });
+    return;
   }
+
+  const formData: IResgisterForm = {
+    username: this.registerForm.get('username')!.value,
+    lastname: this.registerForm.get('lastname')!.value,
+    password: this.registerForm.get('password')!.value,
+    email: this.registerForm.get('email')!.value,
+    term: this.registerForm.get('term')!.value,
+    avatarColor: 'blue', 
+    avatarImage: this.registerForm.get('avatarImage')!.value 
+  };
+
+  this.authService.signup(formData).subscribe({
+    next: (resp) => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Registro exitoso',
+        text: 'El usuario ha sido creado con éxito.',
+      });
+      console.log('Usuario creado', resp);
+      // Aquí puedes redireccionar al usuario o realizar otras acciones post-registro
+    },
+    error: (err) => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error al registrar',
+        text: 'Hubo un problema al crear el usuario, por favor intenta de nuevo.',
+      });
+      console.error('Error al crear usuario', err);
+    }
+  });
+}
+
 
   notValidatedField(field: string): boolean {
     return this.formSubmitted && this.registerForm.get(field)!.invalid;
