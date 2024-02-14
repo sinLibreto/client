@@ -18,8 +18,8 @@ export class LoginComponent {
     private router: Router
   ) {
     this.loginForm = this.fb.group({
-      username: ['', [Validators.required]], 
-      password: ['', [Validators.required]],
+      username: ['caricias', [Validators.required]], 
+      password: ['dsadds', [Validators.required]],
       rememberme: [false]
     });
   }
@@ -40,7 +40,14 @@ export class LoginComponent {
     };
 
     this.authService.login(credentials).subscribe({
+     
       next: (response) => {
+        if (this.loginForm.get('rememberme')?.value){
+          localStorage.setItem('username',this.loginForm.get('username')?.value)
+        } else{
+          localStorage.removeItem('username')
+
+        }
         console.log('Inicio de sesión exitoso:', response);
         Swal.fire({
           icon: 'success',

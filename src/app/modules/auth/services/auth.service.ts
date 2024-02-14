@@ -36,6 +36,7 @@ export class AuthService {
 login(data: { username: string; password: string; }): Observable<UserResponse> {
   return this.http.post<UserResponse>(`${this.base_url}/signin`, data, { withCredentials: true }).pipe(
     tap((resp) => {
+      console.log(resp.token)
       this.guardarLocalStorage(resp.token); 
     })
   );
