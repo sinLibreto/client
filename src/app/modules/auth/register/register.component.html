@@ -1,20 +1,64 @@
-<form [formGroup]="registerForm" (ngSubmit)="onRegister()" class="max-w-md mx-auto mt-10 space-y-4">
-  <div>
-    <input formControlName="username" placeholder="Username" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-  </div>
-  <div>
-    <input type="password" formControlName="password" placeholder="Password" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-  </div>
-  <div>
-    <input formControlName="email" placeholder="Email" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-  </div>
-  <div>
-    <input formControlName="avatarColor" placeholder="Avatar Color" required class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-  </div>
-  <div>
-    <input formControlName="avatarImage" placeholder="Avatar Image (Base64)" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-  </div>
-  <div>
-    <button type="submit" class="w-full px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Register</button>
-  </div>
-</form>
+<div class="www-layout">
+  <section>
+    <div class="gap no-gap signin whitish medium-opacity register">
+      <div class="bg-image" style="background-image:url(assets/images/resources/theme-bg.jpg)"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="big-ad">
+              <figure><img src="assets/images/logo2.png" alt=""></figure>
+              <h1>Welcome to the Pitnik</h1>
+              <p>
+                Pitnik is a social network that can be used to connect people. We help you connect and share with the
+                people in your life.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="reg-from">
+              <span><i class="fa fa-lock"></i> Create an Account</span>
+              <p>Its quick and Easy</p>
+              <form class="c-form" (ngSubmit)="registerUser()" autocomplete="off" [formGroup]="registerForm">
+                <div class="row merged10">
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <input formControlName="username" class="mb-2" type="text" placeholder="Username">
+                    <p *ngIf="notValidatedField('username')" class="text-red-600">Username es obligatorio.</p>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <input formControlName="lastname" class="mb-2" type="text" placeholder="Lastname">
+                    <p *ngIf="notValidatedField('lastname')" class="text-red-600">Lastname es obligatorio.</p>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <input formControlName="email" class="mb-2" type="text" placeholder="Email">
+                    <p *ngIf="notValidatedField('email')" class="text-red-600">Debe ser un email válido.</p>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <input formControlName="password" class="mb-2" type="password" placeholder="Password">
+                    <p *ngIf="notValidatedField('password')" class="text-red-600">Debes escribir la contraseña.</p>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6">
+                    <input formControlName="repassword" class="mb-2" type="password" placeholder="Retype Password">
+                    <p *ngIf="notValidatedField('repassword')" class="text-red-600">Las contraseñas deben ser iguales.</p>
+                  </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12 mb-2">
+                    <div class="checkbox mb-1">
+                      <label>
+                        <input formControlName="term" type="checkbox"><i class="check-box"></i>
+                        By clicking Sign Up, you agree to our Terms, Data Policy and Cookie Policy. You may receive SMS
+                        notifications from us and can opt out at any time.
+                      </label>
+                    </div>
+                    <p *ngIf="isTermAccepted()" class="text-red-600">Debes aceptar los T&C.</p>
+                  </div>
+                  <div>
+                    <button type="submit" class="bg-cyan-800">Signup</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

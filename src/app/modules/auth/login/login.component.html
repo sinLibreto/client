@@ -1,13 +1,39 @@
-<form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="max-w-md mx-auto mt-10 space-y-4">
-    <!-- ... Estilos con Tailwind CSS ... -->
-    <div>
-      <input formControlName="username" placeholder="Username" required class="...estilos de Tailwind...">
+
+<section>
+  <div class="gap no-gap signin whitish medium-opacity">
+        <div class="bg-image" style="background-image:url(assets/images/resources/theme-bg.jpg)"></div>
+        <div class="container">
+          <div class="row">
+                <div class="col-lg-8">
+                    <div class="big-ad">
+                        <figure><img src="assets/images/logo2.png" alt=""></figure>
+                        <h1>Welcome to the Pitnik</h1>
+                        <p>
+                             Pitnik is a social network template that can be used to connect people. use this template for multipurpose social activities like job, dating, posting, bloging and much more. Now join & Make Cool Friends around the world !!!                             
+                        </p>
+                        
+                
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="we-login-register">
+                        <div class="form-title">
+                            <i class="fa-regular fa-right-to-bracket"></i> login
+                            <span>sign in now and meet the awesome Friends around the world.</span>
+                        </div>
+                        <form class="we-form" method="post">
+                            <input type="text" placeholder="Email">
+                            <input type="password" placeholder="Password">
+                            <input type="checkbox"><label>remember me</label>
+                            <button  routerLink="/home" type="submit" data-ripple="">sign in</button>
+                            <a class="forgot underline" href="#" title="">forgot password?</a>
+                        </form>
+
+                        <span>don't have an account? <a class="we-account underline" routerLink="/auth/register" title="">register now</a></span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
     </div>
-    <div>
-      <input type="password" formControlName="password" placeholder="Password" required class="...estilos de Tailwind...">
-    </div>
-    <div>
-      <button type="submit" class="...estilos de Tailwind...">Login</button>
-    </div>
-  </form>
-  
+</section>

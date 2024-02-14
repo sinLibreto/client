@@ -22,6 +22,7 @@ import { HowWorkYeebamComponent } from './how-work-yeebam/how-work-yeebam.compon
 import { YourPageComponent } from './your-page/your-page.component';
 import { EventsComponent } from './events/events.component';
 import { ProfileIntroComponent } from './profile-intro/profile-intro.component';
+import { AuthFormComponent } from './forms/auth-form/auth-form.component';
 
 
 
@@ -48,6 +49,7 @@ import { ProfileIntroComponent } from './profile-intro/profile-intro.component';
     YourPageComponent,
     EventsComponent,
     ProfileIntroComponent,
+    AuthFormComponent,
     
   ],
   imports: [
@@ -76,6 +78,8 @@ import { ProfileIntroComponent } from './profile-intro/profile-intro.component';
     YourPageComponent,
     EventsComponent,
     ProfileIntroComponent,
+    AuthFormComponent,
+
 
   ]
 })

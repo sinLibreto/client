@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { AuthModel } from '../model/auth.model';
 import { UserResponse } from '../model/user.model';
+import { environment } from 'src/environments/environment';
+import { IResgisterForm } from '../interfaces/register-form.interface';
 
 
 @Injectable({
@@ -12,19 +14,20 @@ import { UserResponse } from '../model/user.model';
 })
 export class AuthService {
 
-  private base_url = 'http://localhost:5000/api/v1'; 
+  private base_url = environment.apiBaseUrl; 
 
   constructor(private http: HttpClient, private router: Router) {}
 
 
   // Método para registrar un nuevo usuario
-  signup(data: AuthModel): Observable<UserResponse> {
+  signup(data: IResgisterForm): Observable<UserResponse> {
     return this.http.post<UserResponse>(`${this.base_url}/signup`, data, { withCredentials: true }).pipe(
       tap((resp) => {
         this.guardarLocalStorage(resp.token); 
       })
     );
   }
+
 
 
   // Método para iniciar sesión
